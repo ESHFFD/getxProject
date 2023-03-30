@@ -1,0 +1,33 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+class BlogModel {
+  int? id;
+  String? imageUrl;
+  String? title;
+  String? writer;
+  String? writerImageUrl;
+  String? date;
+  String? content;
+  String? views;
+  BlogModel({
+    required this.id,
+    required this.imageUrl,
+    required this.title,
+    required this.writer,
+    required this.writerImageUrl,
+    required this.date,
+    required this.content,
+    required this.views,
+  });
+
+  BlogModel.fromJson(Map<String, dynamic> json) {
+    id = json[''];
+    imageUrl = json[''];
+    title = json[''];
+    writer = json[''];
+    writerImageUrl = json[''];
+    id = json[''];
+    id = json[''];
+    id = json[''];
+    id = json[''];
+  }
+}
