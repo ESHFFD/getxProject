@@ -19,7 +19,7 @@ class ArticleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(articelController.articelList[0].title);
+    // print(articelController.articelList[0].title);
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: myAppBar(context, title: 'مقالات جدید'),

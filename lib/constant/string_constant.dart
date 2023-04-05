@@ -25,7 +25,14 @@ wwww.google.com
   static const String shareTec = 'اشتراک گذاری';
   static const String gitTec = 'تگ بلاگ در گیت هاب ';
   static const String yourNameAndFamilyName = 'نام و نام خانوادگی';
+  static const String podcastManagement = 'مدیریت پادکست ها';
+  static const String articelManagement = 'مدیریت مقاله ها';
   static const String chooseCategory = 'دسته بندی های مورد علاقت رو اضافه کن';
+  static const String writeBottomSheetArticelSecondPart = """
+فکر کن !!  اینجا بودنت به این معناست که یک گیک تکنولوژی هستی دونسته هات رو با  جامعه‌ی گیک های فارسی زبان به اشتراک بذار
+""";
+  static const String writeBottomSheet =
+      'دونسته هات رو با بقیه به اشتراک بذار ...';
   static const String successCode = """
 تبریک میگم. ایمیل شما با موفقیت تکمیل شد
 لطفا اطلاعات ثبت نام را کامل کنید

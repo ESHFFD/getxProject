@@ -12,4 +12,6 @@ class ConstantIcon {
   static const String account = 'assets/icons/user.png';
   static const String downCategoryArrow = 'assets/icons/down_cat_arrow.png';
   static const String microphoneIcon = 'assets/icons/microphon.png';
+  static const String writeArticel = 'assets/icons/write_article_icon.png';
+  static const String writeMicrophone = 'assets/icons/write_microphone.png';
 }

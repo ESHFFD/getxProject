@@ -1,10 +1,13 @@
 import 'package:blog_app/constant/api_constant.dart';
 import 'package:blog_app/constant/constant.dart';
+import 'package:blog_app/constant/image_const.dart';
+import 'package:blog_app/constant/string_constant.dart';
 import 'package:blog_app/screens/main_screen.dart';
 import 'package:blog_app/services/dio_service.dart';
 // import 'package:blog_app/views/home_screen.dart';
 import 'package:blog_app/views/register/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -72,7 +75,88 @@ class RegisterController extends GetxController {
     if (GetStorage().read(token) == null) {
       Get.to(RegisterScreen());
     } else {
-      debugPrint('home page');
+      buttonModelSheet();
     }
+  }
+
+  buttonModelSheet() {
+    Get.bottomSheet(Container(
+      width: double.infinity,
+      height: Get.height / 3,
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(12), topLeft: Radius.circular(12))),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                SvgPicture.asset(
+                  ConstantImage.techBot,
+                  height: 40,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(ConstantString.writeBottomSheet)
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              ConstantString.writeBottomSheetArticelSecondPart,
+              textAlign: TextAlign.justify,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    color: Colors.white,
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          ConstantIcon.writeArticel,
+                          height: 40,
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        const Text(ConstantString.articelManagement)
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    color: Colors.white,
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          ConstantIcon.writeMicrophone,
+                          height: 40,
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        const Text(ConstantString.podcastManagement)
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    ));
   }
 }
