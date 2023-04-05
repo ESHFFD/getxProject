@@ -2,6 +2,7 @@ import 'package:blog_app/constant/api_constant.dart';
 import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
 import 'package:blog_app/constant/string_constant.dart';
+import 'package:blog_app/main.dart';
 import 'package:blog_app/screens/main_screen.dart';
 import 'package:blog_app/services/dio_service.dart';
 // import 'package:blog_app/views/home_screen.dart';
@@ -118,7 +119,8 @@ class RegisterController extends GetxController {
               children: [
                 GestureDetector(
                   onTap: () {
-                    debugPrint('articel clicked');
+                    // debugPrint('articel clicked');
+                    Get.toNamed(NamedRoute.routeManageArticelScreen);
                   },
                   child: Container(
                     color: Colors.white,

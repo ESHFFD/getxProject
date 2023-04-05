@@ -4,14 +4,14 @@ import 'package:blog_app/controller/articel_controller.dart';
 // import 'package:blog_app/controller/articel_controller.dart';
 import 'package:blog_app/controller/singel_articel_info.dart';
 import 'package:blog_app/screens/my_component.dart';
-import 'package:blog_app/views/article_screen.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 // import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';
-
+import 'package:blog_app/views/article_screen.dart';
 // ArticelController articelController = Get.put(ArticelController());
 
 // ignore: must_be_immutable

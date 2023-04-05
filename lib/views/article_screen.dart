@@ -35,7 +35,7 @@ class ArticleScreen extends StatelessWidget {
                       singelArticelInfoController.getSingelArticel(
                           articelController.articelList[index].id!);
 
-                      Get.toNamed(routeSingelArticelScreen);
+                      Get.toNamed(NamedRoute.routeSingelArticelScreen);
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

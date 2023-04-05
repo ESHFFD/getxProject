@@ -1,6 +1,7 @@
 import 'package:blog_app/bindings/binding.dart';
 import 'package:blog_app/constant/theme.dart';
 import 'package:blog_app/screens/main_screen.dart';
+import 'package:blog_app/views/manage_articel_screen.dart';
 import 'package:blog_app/views/singel_articel_screen.dart';
 // import 'package:blog_app/screens/main_screen.dart';
 // import 'package:blog_app/views/article_screen.dart';
@@ -38,18 +39,25 @@ class MyApp extends StatelessWidget {
       home: const SplashScreen(),
       getPages: [
         GetPage(
-          name: routeMainScreen,
+          name: NamedRoute.routeMainScreen,
           page: () => const MainScreen(),
           binding: RegisterBindigs(),
         ),
         GetPage(
-            name: routeSingelArticelScreen,
+            name: NamedRoute.routeSingelArticelScreen,
             page: () => SingelArticle(),
-            binding: ArticelBindings())
+            binding: ArticelBindings()),
+        GetPage(
+            name: NamedRoute.routeManageArticelScreen,
+            page: () => ManageArticelScreen(),
+            binding: ArticelManagementBunding())
       ],
     );
   }
 }
 
-const String routeMainScreen = '/mainScreen';
-const String routeSingelArticelScreen = '/singelArticelScreen';
+class NamedRoute {
+  static String routeMainScreen = '/mainScreen';
+  static String routeSingelArticelScreen = '/singelArticelScreen';
+  static String routeManageArticelScreen = '/ManageArticel';
+}

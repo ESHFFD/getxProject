@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:blog_app/constant/constant.dart';
+// import 'package:blog_app/main.dart';
+import 'package:blog_app/screens/main_screen.dart';
 // import 'package:blog_app/screens/main_screen.dart';
 // import 'package:blog_app/views/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -40,29 +42,29 @@ myLuncher({required String url}) async {
 PreferredSize myAppBar(BuildContext context, {required String title}) {
   return PreferredSize(
     preferredSize: const Size.fromHeight(80),
-    child: Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: Center(
-              child: Text(
-                'مقالات جدید',
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(color: ConstantSolidColor.primaryColor),
-              ),
+    child: AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
+          child: Center(
+            child: Text(
+              'مقالات جدید',
+              style: Theme.of(context)
+                  .textTheme
+                  .displayMedium!
+                  .copyWith(color: ConstantSolidColor.primaryColor),
             ),
-          )
-        ],
-        leading: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
+          ),
+        )
+      ],
+      leading: GestureDetector(
+        onTap: () {
+          Get.back();
+        },
+        child: Padding(
+          padding: const EdgeInsets.only(right: 8.0),
           child: Container(
             width: 30,
             height: 30,

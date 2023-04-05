@@ -284,7 +284,7 @@ class HomePagePoster extends StatelessWidget {
               Get.find<SingelArticelInfoController>()
                   .getSingelArticel(homeScreenController.blogList[index].id!);
 
-              Get.toNamed(routeSingelArticelScreen);
+              Get.toNamed(NamedRoute.routeSingelArticelScreen);
             },
             child: Padding(
               padding: EdgeInsets.only(right: index == 0 ? badyMargin : 10),
