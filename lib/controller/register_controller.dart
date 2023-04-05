@@ -117,7 +117,9 @@ class RegisterController extends GetxController {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    debugPrint('articel clicked');
+                  },
                   child: Container(
                     color: Colors.white,
                     child: Row(
@@ -135,7 +137,9 @@ class RegisterController extends GetxController {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    debugPrint('podcast clicked');
+                  },
                   child: Container(
                     color: Colors.white,
                     child: Row(
