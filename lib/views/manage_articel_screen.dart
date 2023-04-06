@@ -114,6 +114,17 @@ class ManageArticelScreen extends StatelessWidget {
                   )
                 : EmptyArticel(textTheme: textTheme),
       ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                fixedSize: Size(Get.width / 3, Get.height / 15)),
+            onPressed: () {},
+            child: Text(
+              ConstantString.emptyArticelManagement,
+              style: textTheme.displayLarge!.copyWith(color: Colors.white),
+            )),
+      ),
     );
   }
 }
@@ -147,12 +158,6 @@ class EmptyArticel extends StatelessWidget {
                     text: ConstantString.articleEmpty,
                     style: textTheme.displayMedium)),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: ElevatedButton(
-                onPressed: () {},
-                child: const Text(ConstantString.emptyArticelManagement)),
-          )
         ],
       ),
     );

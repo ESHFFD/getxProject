@@ -27,6 +27,7 @@ class ManageArticel extends GetxController {
       jsonData.forEach((el) {
         articelList.add(ArticelModel.fromJson(el));
       });
+      // articelList.clear();s
 
       isLoading.value = false;
     }
