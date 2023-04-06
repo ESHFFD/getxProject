@@ -1,7 +1,7 @@
 import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
 import 'package:blog_app/main.dart';
-import 'package:blog_app/screens/main_screen.dart';
+// import 'package:blog_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';

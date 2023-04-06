@@ -1,5 +1,5 @@
 import 'package:blog_app/controller/articel_controller.dart';
-import 'package:blog_app/controller/home_screen_controller.dart';
+// import 'package:blog_app/controller/home_screen_controller.dart';
 import 'package:blog_app/controller/manage_articel_controller.dart';
 import 'package:blog_app/controller/register_controller.dart';
 import 'package:blog_app/controller/singel_articel_info.dart';

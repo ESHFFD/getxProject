@@ -3,6 +3,7 @@ class ConstantImage {
   static const String posterMainPage = 'assets/images/poster.png';
   static const String profileAvatar = 'assets/images/profileAvatar.png';
   static const String techBot = 'assets/images/tcbot.svg';
+  static const String emptyTechBot = 'assets/images/empty_state.png';
 }
 
 class ConstantIcon {

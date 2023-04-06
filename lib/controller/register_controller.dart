@@ -15,8 +15,7 @@ import 'package:get_storage/get_storage.dart';
 class RegisterController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController activeCodeController = TextEditingController();
-  var user_id;
-  var email;
+  // var user_id;
 
   register() async {
     Map<String, dynamic> map = {
@@ -27,8 +26,8 @@ class RegisterController extends GetxController {
 
     var response = await DioService().postMethod(map, ApiConstant.postRegister);
 
-    email = emailController.text;
-    user_id = response.data['user_id'];
+    StorageValue.email = emailController.text;
+    StorageValue.userId = response.data['user_id'];
     debugPrint(response.toString());
   }
 
@@ -38,7 +37,7 @@ class RegisterController extends GetxController {
 
     Map<String, dynamic> map = {
       'email': emailController.text,
-      'user_id': user_id,
+      'user_id': StorageValue.userId,
       'code': activeCodeController.text,
       'command': 'verify'
     };
@@ -47,14 +46,14 @@ class RegisterController extends GetxController {
     var response = await DioService().postMethod(map, ApiConstant.postRegister);
 
     debugPrint(response.data.toString());
-    box.write(token, response.data['token']);
-    box.write(userId, response.data['user_id']);
+    box.write(StorageValue.token, response.data['token']);
+    box.write(StorageValue.userId, response.data['user_id']);
 
     var status = response.data['response'];
     switch (status) {
       case 'verified':
-        box.write(token, response.data['token']);
-        box.write(userId, response.data['user_id']);
+        box.write(StorageValue.token, response.data['token']);
+        box.write(StorageValue.userId, response.data['user_id']);
         Get.offAll(() => const MainScreen());
         // print('read:: ${box.read(token)} , ${box.read(userId)}');
         break;
@@ -73,7 +72,7 @@ class RegisterController extends GetxController {
   }
 
   toggelLogin() {
-    if (GetStorage().read(token) == null) {
+    if (GetStorage().read(StorageValue.token) == null) {
       Get.to(RegisterScreen());
     } else {
       buttonModelSheet();

@@ -38,5 +38,8 @@ class ConsatntLinearGradiant {
   ];
 }
 
-String token = 'token';
-String userId = 'userId';
+class StorageValue {
+  static String token = 'token';
+  static String email = 'email';
+  static String userId = 'userId';
+}

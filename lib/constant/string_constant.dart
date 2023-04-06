@@ -23,10 +23,15 @@ wwww.google.com
   static const String profileUser = 'پروفایل کاربری';
   static const String aboutTec = 'درباره ما';
   static const String shareTec = 'اشتراک گذاری';
+  // static const String articel = 'اشتراک گذاری';
   static const String gitTec = 'تگ بلاگ در گیت هاب ';
   static const String yourNameAndFamilyName = 'نام و نام خانوادگی';
   static const String podcastManagement = 'مدیریت پادکست ها';
   static const String articelManagement = 'مدیریت مقاله ها';
+  static const String emptyArticelManagement = 'بریم برای نوشتن یه مقاله باحال';
+  static const String articleEmpty =
+      """هنوز هیچ مقاله ای به جامعه گیک های فارسی 
+اضافه نکردی !!!""";
   static const String chooseCategory = 'دسته بندی های مورد علاقت رو اضافه کن';
   static const String writeBottomSheetArticelSecondPart = """
 فکر کن !!  اینجا بودنت به این معناست که یک گیک تکنولوژی هستی دونسته هات رو با  جامعه‌ی گیک های فارسی زبان به اشتراک بذار

@@ -3,7 +3,7 @@ import 'package:blog_app/models/articel_model.dart';
 import 'package:blog_app/models/singel_articel_model.dart';
 import 'package:blog_app/models/tag_model.dart';
 import 'package:blog_app/services/dio_service.dart';
-import 'package:blog_app/views/singel_articel_screen.dart';
+// import 'package:blog_app/views/singel_articel_screen.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
