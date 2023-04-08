@@ -1,4 +1,5 @@
 // import 'package:blog_app/constant/constant.dart';
+import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
 import 'package:blog_app/constant/string_constant.dart';
 import 'package:blog_app/controller/articel_controller.dart';
@@ -90,15 +91,23 @@ class SingelManagementArticle extends StatelessWidget {
                           height: 30,
                           width: 120,
                           decoration: const BoxDecoration(
-                              color: Colors.red,
+                              color: ConstantSolidColor.primaryColor,
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(12),
                                   topLeft: Radius.circular(12))),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Text(ConstantString.selectphotoSingelArticel),
-                              const Icon(Icons.add)
+                              Text(
+                                ConstantString.selectphotoSingelArticel,
+                                style: textTheme.displayMedium!
+                                    .copyWith(color: Colors.white),
+                              ),
+                              const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 22,
+                              )
                             ],
                           ),
                         ),
@@ -152,29 +161,31 @@ class SingelManagementArticle extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
+
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Text(manageSingelArticel.singelArticel.value.title!),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
-                          Image(
-                            image: AssetImage(ConstantImage.profileAvatar),
-                            width: 25,
-                            height: 25,
-                          ),
-                        ],
-                      ),
-                    ),
+
                     const SizedBox(
-                      height: 32,
+                      height: 16,
+                    ),
+                    MyCustomSelectabbleIcon(
+                        text: ConstantString.editMainArticelTitle,
+                        icon: ConstantIcon.bluePen,
+                        badyMargin: badyMargin,
+                        textTheme: textTheme,
+                        onTap: () {
+                          Get.toNamed('page');
+                        }),
+                    const SizedBox(
+                      height: 16,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                      padding: EdgeInsets.only(
+                        right: badyMargin,
+                      ),
                       child: HtmlWidget(
                         """<h4>${manageSingelArticel.singelArticel.value.content}</h4> """,
                         enableCaching: true,
@@ -183,9 +194,18 @@ class SingelManagementArticle extends StatelessWidget {
                         },
                       ),
                     ),
+
                     const SizedBox(
                       height: 32,
                     ),
+                    MyCustomSelectabbleIcon(
+                        text: ConstantString.selectCategorySingelEditScreen,
+                        icon: ConstantIcon.bluePen,
+                        badyMargin: badyMargin,
+                        textTheme: textTheme,
+                        onTap: () {
+                          Get.toNamed('page');
+                        }),
                     _tags(),
 
                     // const SizedBox(

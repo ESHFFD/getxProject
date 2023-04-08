@@ -11,6 +11,7 @@ wwww.google.com
   static const String posterHeadlineMain = 'دسترسی بیشتر به سیستم ها';
   static const String hottestNews = 'مشاهده داغ ترین ها';
   static const String hottestPodcats = 'داغ ترین پادکست ها';
+  static const String selectCategorySingelEditScreen = 'انتخاب دسته بندی';
   static const String editProfile = 'ویرایش پروفایل شخصی';
   static const String myFavArticle = 'مقالات مورد علاقه من';
   static const String myFavPodcast = 'پادکست های مورد علاقه من';
@@ -21,6 +22,7 @@ wwww.google.com
   static const String activeCode = 'کد فعال سازی رو وارد کن';
   static const String starCode = '******';
   static const String profileUser = 'پروفایل کاربری';
+  static const String editMainArticelTitle = 'ویرایش متن اصلی مقاله';
   static const String aboutTec = 'درباره ما';
   static const String shareTec = 'اشتراک گذاری';
   // static const String articel = 'اشتراک گذاری';
