@@ -3,6 +3,7 @@ import 'package:blog_app/constant/theme.dart';
 import 'package:blog_app/screens/main_screen.dart';
 import 'package:blog_app/views/manage_articel_screen.dart';
 import 'package:blog_app/views/singel_articel_screen.dart';
+import 'package:blog_app/views/singel_management_articel.dart';
 // import 'package:blog_app/screens/main_screen.dart';
 // import 'package:blog_app/views/article_screen.dart';
 // import 'package:blog_app/views/singel_articel_screen.dart';
@@ -51,7 +52,11 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: NamedRoute.routeManageArticelScreen,
             page: () => ManageArticelScreen(),
-            binding: ArticelManagementBunding())
+            binding: ArticelManagementBunding()),
+        GetPage(
+            name: NamedRoute.routeManageSingelArticelScreen,
+            page: () => SingelManagementArticle(),
+            binding: ArticelManagementBunding()),
       ],
     );
   }
@@ -61,4 +66,5 @@ class NamedRoute {
   static String routeMainScreen = '/mainScreen';
   static String routeSingelArticelScreen = '/singelArticelScreen';
   static String routeManageArticelScreen = '/ManageArticel';
+  static String routeManageSingelArticelScreen = '/ManageSingelArticel';
 }

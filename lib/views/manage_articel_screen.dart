@@ -119,7 +119,10 @@ class ManageArticelScreen extends StatelessWidget {
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 fixedSize: Size(Get.width / 3, Get.height / 15)),
-            onPressed: () {},
+            onPressed: () {
+              print('clicked');
+              Get.toNamed(NamedRoute.routeManageSingelArticelScreen);
+            },
             child: Text(
               ConstantString.emptyArticelManagement,
               style: textTheme.displayLarge!.copyWith(color: Colors.white),

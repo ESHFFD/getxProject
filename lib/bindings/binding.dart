@@ -15,7 +15,7 @@ class RegisterBindigs implements Bindings {
 class ArticelManagementBunding implements Bindings {
   @override
   void dependencies() {
-    Get.put(ManageArticel());
+    Get.lazyPut(() => ManageArticel());
   }
 }
 

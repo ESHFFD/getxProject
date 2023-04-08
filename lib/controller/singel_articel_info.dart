@@ -8,7 +8,8 @@ import 'package:blog_app/services/dio_service.dart';
 import 'package:get/get.dart';
 
 class SingelArticelInfoController extends GetxController {
-  Rx<SingelArticelInfoModel> singelArticel = SingelArticelInfoModel().obs;
+  Rx<SingelArticelInfoModel> singelArticel =
+      SingelArticelInfoModel(null, null, null).obs;
   RxList<TagModel> tags = RxList();
   RxList<ArticelModel> relatedArticel = RxList();
   RxBool isLoading = false.obs;
@@ -21,7 +22,7 @@ class SingelArticelInfoController extends GetxController {
   // }
 
   getSingelArticel(String id) async {
-    singelArticel = SingelArticelInfoModel().obs;
+    singelArticel = SingelArticelInfoModel(null, null, null).obs;
     isLoading.value = true;
     var userId = '';
     var response = await DioService().getMethod(

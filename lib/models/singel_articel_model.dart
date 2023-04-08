@@ -14,17 +14,10 @@ class SingelArticelInfoModel {
   String? createdAt;
   bool? isFavorite;
   SingelArticelInfoModel(
-      {this.id,
-      this.title,
-      this.content,
-      this.image,
-      this.catId,
-      this.catName,
-      this.author,
-      this.view,
-      this.status,
-      this.createdAt,
-      this.isFavorite});
+    this.title,
+    this.content,
+    this.image,
+  );
   SingelArticelInfoModel.fromJson(Map<String, dynamic> json) {
     var info = json['info'];
     id = info['id'];
