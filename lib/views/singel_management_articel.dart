@@ -1,5 +1,6 @@
 // import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
+import 'package:blog_app/constant/string_constant.dart';
 import 'package:blog_app/controller/articel_controller.dart';
 import 'package:blog_app/controller/manage_articel_controller.dart';
 // import 'package:blog_app/controller/articel_controller.dart';
@@ -42,7 +43,9 @@ class SingelManagementArticle extends StatelessWidget {
             Stack(
               children: [
                 CachedNetworkImage(
-                  imageUrl: manageSingelArticel.singelArticel.value.image!,
+                  imageUrl:
+                      'https://techblog.sasansafari.com/Techblog/assets/upload/images/article/valhalla.jpg',
+                  // manageSingelArticel.singelArticel.value.image!
                   imageBuilder: (context, imageProvider) => Container(
                     width: double.infinity,
                     height: Get.height / 3.5,
@@ -52,6 +55,7 @@ class SingelManagementArticle extends StatelessWidget {
                       image: DecorationImage(
                           image: imageProvider, fit: BoxFit.cover),
                     ),
+
                     // foregroundDecoration: const BoxDecoration(
                     //     color: Colors.red,
                     //     borderRadius:
@@ -72,6 +76,31 @@ class SingelManagementArticle extends StatelessWidget {
                     );
                   },
                 ),
+                Positioned(
+                    bottom: 0,
+                    right: 0,
+                    left: 0,
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 30,
+                          width: 120,
+                          decoration: const BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(12),
+                                  topLeft: Radius.circular(12))),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(ConstantString.selectphotoSingelArticel),
+                              const Icon(Icons.add)
+                            ],
+                          ),
+                        ),
+                      ),
+                    )),
                 Positioned(
                     right: 2,
                     top: 40,

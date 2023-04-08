@@ -14,7 +14,7 @@ class ManageArticel extends GetxController {
   Rx<SingelArticelInfoModel> singelArticel = SingelArticelInfoModel(
           'این ',
           """است که داستان وایکینگ‌ها را روایت می‌کند و جنبه‌های اکشن ادونچر (ماجراجویی) آن با تکیه بر المان‌های نقش‌آفرینی """,
-          '/Techblog/assets/upload/images/article/valhalla.jpg')
+          '')
       .obs;
   RxBool isLoading = false.obs;
 
