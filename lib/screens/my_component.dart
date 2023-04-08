@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:blog_app/constant/constant.dart';
+// import 'package:blog_app/constant/image_const.dart';
+import 'package:blog_app/constant/string_constant.dart';
 // import 'package:blog_app/main.dart';
 // import 'package:blog_app/screens/main_screen.dart';
 // import 'package:blog_app/screens/main_screen.dart';
@@ -92,6 +94,50 @@ class MyLoadingWidget extends StatelessWidget {
     return const SpinKitFadingCube(
       color: ConstantSolidColor.primaryColor,
       size: 52,
+    );
+  }
+}
+
+class MyCustomSelectabbleIcon extends StatelessWidget {
+  const MyCustomSelectabbleIcon(
+      {super.key,
+      required this.badyMargin,
+      required this.textTheme,
+      required this.icon,
+      required this.text,
+      required this.onTap});
+
+  final double badyMargin;
+  final TextTheme textTheme;
+  final VoidCallback onTap;
+  final String icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.only(right: badyMargin),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            ImageIcon(
+              AssetImage(icon),
+              color: ConstantSolidColor.primaryColor,
+              size: 18,
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            Text(
+              text,
+              style: textTheme.displayLarge!
+                  .copyWith(color: ConstantSolidColor.primaryColor),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

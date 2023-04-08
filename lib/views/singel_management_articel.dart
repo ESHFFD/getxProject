@@ -25,6 +25,9 @@ class SingelManagementArticle extends StatelessWidget {
   // @override
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final size = MediaQuery.of(context).size;
+    final double badyMargin = size.width / 15;
     // var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       // appBar: AppBar(
@@ -135,6 +138,17 @@ class SingelManagementArticle extends StatelessWidget {
                     ))
               ],
             ),
+            const SizedBox(
+              height: 16,
+            ),
+            MyCustomSelectabbleIcon(
+                text: ConstantString.editArticelTitle,
+                icon: ConstantIcon.bluePen,
+                badyMargin: badyMargin,
+                textTheme: textTheme,
+                onTap: () {
+                  Get.toNamed('page');
+                }),
             const SizedBox(
               height: 16,
             ),

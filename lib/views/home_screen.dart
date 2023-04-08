@@ -50,32 +50,16 @@ class HomePagePoster extends StatelessWidget {
                   const SizedBox(
                     height: 32,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => ArticleScreen());
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(right: badyMargin),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const ImageIcon(
-                            AssetImage(ConstantIcon.bluePen),
-                            color: Colors.amber,
-                            size: 18,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            ConstantString.hottestNews,
-                            style: textTheme.displayLarge!
-                                .copyWith(color: Colors.amber),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  MyCustomSelectabbleIcon(
+                      text: ConstantString.hottestNews,
+                      onTap: () {
+                        () {
+                          Get.to(() => ArticleScreen());
+                        };
+                      },
+                      badyMargin: badyMargin,
+                      icon: ConstantIcon.bluePen,
+                      textTheme: textTheme),
                   const SizedBox(
                     height: 16,
                   ),

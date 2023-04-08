@@ -29,6 +29,7 @@ wwww.google.com
   static const String podcastManagement = 'مدیریت پادکست ها';
   static const String articelManagement = 'مدیریت مقاله ها';
   static const String selectphotoSingelArticel = 'انتخاب تصویر';
+  static const String editArticelTitle = 'ویرایش عنوان مقاله';
   static const String emptyArticelManagement = 'بریم برای نوشتن یه مقاله باحال';
   static const String articleEmpty =
       """هنوز هیچ مقاله ای به جامعه گیک های فارسی 
