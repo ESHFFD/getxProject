@@ -17,6 +17,7 @@ class ManageArticel extends GetxController {
           '')
       .obs;
   RxBool isLoading = false.obs;
+  TextEditingController titleEditing = TextEditingController();
 
   @override
   onInit() {
@@ -40,5 +41,10 @@ class ManageArticel extends GetxController {
 
       isLoading.value = false;
     }
+  }
+  updateArticleTitle(){
+    singelArticel.update((val) {
+      val!.title = titleEditing.text;
+    });
   }
 }

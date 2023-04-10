@@ -29,7 +29,25 @@ class SingelManagementArticle extends StatelessWidget {
   var manageSingelArticel = Get.find<ManageArticel>();
   // FilePickerController filePickerController = Get.put(FilePickerController());
   FilePickerController filePickerController = Get.put(FilePickerController());
-  // @override
+
+  getNewTitle() {
+    Get.defaultDialog(
+        title: 'عنوان مقاله',
+        content: TextFormField(
+          controller: manageSingelArticel.titleEditing,
+          keyboardType: TextInputType.text,
+          decoration:
+              const InputDecoration(hintText: 'عنوان مقالتو اینجا بنویس'),
+
+        ),
+        confirm: ElevatedButton(
+            onPressed: () {
+              manageSingelArticel.updateArticleTitle();
+              Get.back();
+            },
+            child: const Text('ثبت')));
+  }
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -52,41 +70,47 @@ class SingelManagementArticle extends StatelessWidget {
           children: [
             Stack(
               children: [
-                  filePickerController.file.value.name=='nothing'?
-                CachedNetworkImage(
-                  imageUrl:
-                      'https://techblog.sasansafari.com/Techblog/assets/upload/images/article/valhalla.jpg',
-                  // manageSingelArticel.singelArticel.value.image!
-                  imageBuilder: (context, imageProvider) => Container(
-                    width: double.infinity,
-                    height: Get.height / 3.5,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: const BorderRadius.only(),
-                      image: DecorationImage(
-                          image: imageProvider, fit: BoxFit.cover),
-                    ),
+                filePickerController.file.value.name == 'nothing'
+                    ? CachedNetworkImage(
+                        imageUrl:
+                            'https://techblog.sasansafari.com/Techblog/assets/upload/images/article/valhalla.jpg',
+                        // manageSingelArticel.singelArticel.value.image!
+                        imageBuilder: (context, imageProvider) => Container(
+                          width: double.infinity,
+                          height: Get.height / 3.5,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: const BorderRadius.only(),
+                            image: DecorationImage(
+                                image: imageProvider, fit: BoxFit.cover),
+                          ),
 
-                    // foregroundDecoration: const BoxDecoration(
-                    //     color: Colors.red,
-                    //     borderRadius:
-                    //         BorderRadius.all(Radius.circular(10)),
-                    //     gradient: LinearGradient(
-                    //         colors: ConsatntLinearGradiant
-                    //             .posteMainScreenGradiant,
-                    //         begin: Alignment.bottomCenter,
-                    //         end: Alignment.topCenter)),
-                  ),
-                  placeholder: (context, url) {
-                    return const MyLoadingWidget();
-                  },
-                  errorWidget: (context, url, error) {
-                    return const Icon(
-                      Icons.image_not_supported_outlined,
-                      size: 54,
-                    );
-                  },
-                ):  Image.file(File(filePickerController.file.value.path!),height: Get.height/3.5,width: double.infinity,fit: BoxFit.cover,),
+                          // foregroundDecoration: const BoxDecoration(
+                          //     color: Colors.red,
+                          //     borderRadius:
+                          //         BorderRadius.all(Radius.circular(10)),
+                          //     gradient: LinearGradient(
+                          //         colors: ConsatntLinearGradiant
+                          //             .posteMainScreenGradiant,
+                          //         begin: Alignment.bottomCenter,
+                          //         end: Alignment.topCenter)),
+                        ),
+                        placeholder: (context, url) {
+                          return const MyLoadingWidget();
+                        },
+                        errorWidget: (context, url, error) {
+                          return const Icon(
+                            Icons.image_not_supported_outlined,
+                            size: 54,
+                          );
+                        },
+                      )
+                    : Image.file(
+                        File(filePickerController.file.value.path!),
+                        height: Get.height / 3.5,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
                 Positioned(
                     bottom: 0,
                     right: 0,
@@ -134,7 +158,6 @@ class SingelManagementArticle extends StatelessWidget {
                           size: 32,
                           color: Colors.white,
                         ))),
-
               ],
             ),
             const SizedBox(
@@ -146,7 +169,7 @@ class SingelManagementArticle extends StatelessWidget {
                 badyMargin: badyMargin,
                 textTheme: textTheme,
                 onTap: () {
-                  Get.toNamed('page');
+                  getNewTitle();
                 }),
             const SizedBox(
               height: 16,

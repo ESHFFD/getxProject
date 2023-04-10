@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: getThemeData(),
       home: const SplashScreen(),
+
       getPages: [
         GetPage(
           name: NamedRoute.routeMainScreen,
