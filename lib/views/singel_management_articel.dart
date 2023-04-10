@@ -3,10 +3,12 @@ import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
 import 'package:blog_app/constant/string_constant.dart';
 import 'package:blog_app/controller/articel_controller.dart';
+import 'package:blog_app/controller/file_picker_controller.dart';
 import 'package:blog_app/controller/manage_articel_controller.dart';
 // import 'package:blog_app/controller/articel_controller.dart';
 import 'package:blog_app/controller/singel_articel_info.dart';
 import 'package:blog_app/screens/my_component.dart';
+import 'package:blog_app/services/file_picker.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +24,7 @@ class SingelManagementArticle extends StatelessWidget {
   SingelManagementArticle({Key? key}) : super(key: key);
   // ArticelController articelController = Get.put(ArticelController());
   var manageSingelArticel = Get.find<ManageArticel>();
+  // FilePickerController filePickerController = Get.put(FilePickerController());
 
   // @override
   @override
@@ -86,7 +89,9 @@ class SingelManagementArticle extends StatelessWidget {
                     left: 0,
                     child: Center(
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          pickFile();
+                        },
                         child: Container(
                           height: 30,
                           width: 120,
