@@ -1,4 +1,6 @@
 // import 'package:blog_app/constant/constant.dart';
+import 'dart:io';
+
 import 'package:blog_app/constant/constant.dart';
 import 'package:blog_app/constant/image_const.dart';
 import 'package:blog_app/constant/string_constant.dart';
@@ -17,6 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';
 import 'package:blog_app/views/article_screen.dart';
+import 'package:get_storage/get_storage.dart';
 // ArticelController articelController = Get.put(ArticelController());
 
 // ignore: must_be_immutable
@@ -25,7 +28,7 @@ class SingelManagementArticle extends StatelessWidget {
   // ArticelController articelController = Get.put(ArticelController());
   var manageSingelArticel = Get.find<ManageArticel>();
   // FilePickerController filePickerController = Get.put(FilePickerController());
-
+  FilePickerController filePickerController = Get.put(FilePickerController());
   // @override
   @override
   Widget build(BuildContext context) {
@@ -49,6 +52,7 @@ class SingelManagementArticle extends StatelessWidget {
           children: [
             Stack(
               children: [
+                  filePickerController.file.value.name=='nothing'?
                 CachedNetworkImage(
                   imageUrl:
                       'https://techblog.sasansafari.com/Techblog/assets/upload/images/article/valhalla.jpg',
@@ -82,7 +86,7 @@ class SingelManagementArticle extends StatelessWidget {
                       size: 54,
                     );
                   },
-                ),
+                ):  Image.file(File(filePickerController.file.value.path!),height: Get.height/3.5,width: double.infinity,fit: BoxFit.cover,),
                 Positioned(
                     bottom: 0,
                     right: 0,
@@ -130,26 +134,7 @@ class SingelManagementArticle extends StatelessWidget {
                           size: 32,
                           color: Colors.white,
                         ))),
-                Positioned(
-                    left: 2,
-                    top: 40,
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.bookmark_outline,
-                          size: 32,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Icon(
-                          Icons.share,
-                          size: 32,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ))
+
               ],
             ),
             const SizedBox(
